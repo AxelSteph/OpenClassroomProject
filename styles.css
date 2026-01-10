@@ -12,10 +12,6 @@
   --footer-color: #353535;
 }
 
-.d-none {
-  display: none;
-}
-
 body {
   margin: 0;
 }
@@ -39,30 +35,27 @@ a {
 
 button {
   font-size: 30px;
-  padding: 40px 40px;
-  border: 0px;
+  padding: 40px;
+  border: 0;
   border-radius: 60px;
   color: white;
   background: linear-gradient(var(--second-color), var(--main-color));
 }
 
-/***** Header *****/
+/***** HEADER *****/
 
-header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-header img {
+.header__logo {
   margin: 40px 0;
 }
 
-/***** Main *****/
-
-.location {
+.header__location {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 30px;
   background-color: var(--bg-color);
@@ -72,59 +65,62 @@ header img {
   font-weight: bold;
 }
 
-.location i.fa-solid.fa-location-dot.location {
+.header__location-icon {
   width: 10px;
 }
 
-/***** Rechercher *****/
+/***** HERO *****/
 
-#Rechercher {
+.hero {
   background-color: var(--bg-color);
   text-align: center;
   padding: 60px 100px;
 }
 
-#Rechercher h1 {
+.hero__title {
   font-size: 50px;
   margin: 10px 0;
 }
 
-/***** Fonctionnement *****/
+.hero__description {
+  font-size: 40px;
+}
 
-#Fonctionnement {
+/***** FONCTIONNEMENT *****/
+
+.steps {
   padding: 60px 40px;
 }
 
-#liste-etape {
+.steps__list {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.etape-fonctionnement {
+.steps__item {
   display: flex;
-  flex-direction: row;
   align-items: center;
   border-radius: 50px;
   background-color: var(--bg-color);
-  gap: 10px;
   width: 95%;
   margin: 30px 0;
   padding: 20px 0;
 }
 
-.etape-fonctionnement i {
+.steps__icon {
   font-size: 40px;
   color: grey;
   margin-left: 60px;
 }
 
-.etape-fonctionnement p {
+.steps__text {
   font-weight: bold;
   margin-left: 80px;
+  font-size: 40px;
 }
 
-.numero-etape {
+.steps__number {
   font-size: 30px;
   background-color: var(--main-color);
   padding: 10px 20px;
@@ -133,198 +129,129 @@ header img {
   color: white;
 }
 
-/***** Restaurant *****/
+/***** RESTAURANTS (cards accueil) *****/
 
-#Restaurant {
-  padding: 40px 40px;
+.restaurants {
+  padding: 40px;
   background-color: var(--bg-color);
 }
 
-#Restaurant .cards {
+.restaurant-card {
   border-radius: 20px;
   background-color: white;
   margin-bottom: 60px;
 }
 
-#Restaurant img {
+.restaurant-card__image {
   width: 100%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  margin-bottom: 10px;
-  object-fit: cover;
   height: 500px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
 }
 
-#Restaurant .cards-content {
+.restaurant-card__content {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: 20px 0;
 }
 
-#Restaurant .cards-text {
+.restaurant-card__text {
   display: flex;
   flex-direction: column;
 }
 
-#Restaurant .cards-text p,
-#Restaurant .cards-text h3 {
+.restaurant-card__name,
+.restaurant-card__location {
   margin: 10px 20px;
 }
 
-.coeurs {
+.restaurant-card__like {
   position: relative;
-  display: inline-block;
   font-size: 60px;
   margin: 30px 120px;
 }
 
-.coeur-plein {
-  color: rgba(0, 0, 0, 0);
-}
-
-.coeur-vide {
+.restaurant-card__heart {
+  position: absolute;
   color: black;
 }
 
-.coeurs .fa-heart {
-  position: absolute;
+.restaurant-card__heart--active {
+  color: rgba(0, 0, 0, 0);
 }
 
-.fa-heart:hover {
+.restaurant-card__like:hover .restaurant-card__heart--active {
   color: var(--main-color);
 }
 
-/***** Footer *****/
+/***** PAGES RESTAURANTS *****/
 
-footer {
+.header__menu {
   display: flex;
-  flex-direction: column;
-  background-color: var(--footer-color);
-  width: 100%;
-  padding: 20px 0;
-}
-
-footer img {
-  margin: 40px 40px;
-  width: 200px;
-}
-
-footer a {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: white;
-  gap: 40px;
-  height: 60px;
-  margin: 0 40px;
-}
-
-footer a i {
-  font-size: 30px;
-  margin: 0;
-  width: 15px;
-}
-
-/***** Pages menu *****/
-
-.header-menu {
-  display: flex;
-  flex-direction: row;
   align-items: center;
 }
 
-.header-menu i {
+.header__back i {
   font-size: 40px;
   margin-left: -200px;
 }
 
-.img-restaurant {
-  width: 100%;
-  object-fit: cover;
-  height: 700px;
+.restaurant {
+  position: relative;
 }
 
-.menu-restaurant {
+.restaurant__image {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.restaurant-menu {
   background-color: var(--bg-color);
   padding: 20px;
   margin-top: -120px;
-  left: 0;
-  right: 0;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
+  border-radius: 100px 100px 0 0;
   position: relative;
-
   opacity: 0;
   animation: slideUp 500ms ease-out forwards;
 }
 
-.titre-restaurant {
+.restaurant-menu__header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  font-size: 40px;
   align-items: center;
+  padding-right: 100px;
+  padding-left: 20px;
+  margin-top: 20px;
 }
 
-.titre-restaurant i {
-  font-size: 70px;
-  margin: 0 100px;
-}
-
-.nom-restaurant {
-  font-weight: 900;
-  font-style: italic;
-  margin: 40px 20px;
+.restaurant-menu__title {
   font-family: "Shrikhand";
+  font-size: 70px;
+  font-style: italic;
 }
 
-.card-menu {
-  margin: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: white;
-  border-radius: 20px;
-
-  opacity: 0;
-  animation: slideUp 1s ease-out forwards;
+.restaurant-menu__like {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
 }
 
-.content-menu {
-  margin: 25px;
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
+.restaurant-menu__heart {
+  font-size: 70px;
+  position: absolute;
 }
 
-.check-menu {
-  font-size: 40px;
-  align-content: center;
-  width: 0px;
-  background-color: var(--third-color);
-  color: white;
-  text-align: center;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  overflow: hidden;
-  transition: width 600ms;
+.restaurant-menu__heart--active {
+  color: transparent;
 }
-
-.card-menu:hover .check-menu i {
-  animation: roll 400ms ease-out forwards;
-}
-
-.card-menu:hover .check-menu {
-  width: 250px;
-}
-
-.group-menu h2 {
+.menu-section__title {
   font-weight: lighter;
   margin-left: 10px;
 }
 
-.group-menu h2::after {
+.menu-section__title::after {
   content: "";
   display: block;
   width: 80px;
@@ -333,40 +260,106 @@ footer a i {
   margin-top: 6px;
 }
 
-.card-menu h3 {
+.menu-card {
+  margin: 25px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  animation: slideUp 1s ease-out forwards;
+}
+
+.menu-card__content {
+  margin: 25px;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu-card__name {
   margin: 10px 0;
 }
 
-.card-menu p {
-  margin: 0;
+.menu-card__description {
+  display: flex;
+  justify-content: space-between;
 }
 
-.card-menu:hover .description-plat,
-h3 {
+.menu-card__text {
+  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.description-menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-overflow: ellipsis;
+.menu-card__price {
+  margin: 0;
+  font-weight: bold;
 }
 
-.menu-restaurant button {
+.menu-card__check {
+  font-size: 40px;
+  width: 0;
+  background-color: var(--third-color);
+  color: white;
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  transition: width 600ms;
+}
+
+.menu-card:hover .menu-card__check {
+  width: 250px;
+}
+
+.menu-card:hover .menu-card__check i {
+  animation: roll 400ms ease-out forwards;
+}
+
+.restaurant-menu__button {
   width: 400px;
+  margin: 60px auto;
+  display: flex;
   justify-content: center;
   font-size: 35px;
-  margin: 60px 0;
-  transition: background-color 0.3s ease, filter 0.3s ease;
+  transition: filter 0.3s ease;
 }
 
-.menu-restaurant button:hover {
+.restaurant-menu__button:hover {
   filter: brightness(1.1);
 }
+
+/***** FOOTER *****/
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--footer-color);
+  padding: 20px 0;
+}
+
+.footer__logo {
+  margin: 40px;
+  width: 200px;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  height: 60px;
+  margin: 0 40px;
+  color: white;
+  font-size: 30px;
+}
+
+.footer__icon {
+  font-size: 30px;
+  width: 15px;
+}
+
+/***** ANIMATIONS *****/
 
 @keyframes slideUp {
   from {
