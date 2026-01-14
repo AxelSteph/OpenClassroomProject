@@ -1,0 +1,74 @@
+/* Restaurants (cards accueil) */
+.restaurants {
+  padding: 40px;
+  background-color: var(--bg-color);
+
+  }
+
+.restaurant-card {
+  border-radius: 20px;
+  background-color: white;
+  margin-bottom: 60px;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+
+  &__link {
+    display: block;
+  }
+
+  &__badge {
+    position: absolute;
+    top:25px;
+    right: 25px;
+    background-color: var(--third-color);
+    color: #008766;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px 40px;
+    border-radius: 4px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name,
+  &__location {
+    margin: 10px 20px;
+  }
+
+  &__like {
+    position: relative;
+    font-size: 60px;
+    margin: 30px 120px;
+
+    & .restaurant-card__heart {
+      position: absolute;
+      color: black;
+    }
+    
+    & .restaurant-card__heart--active {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    &:hover .restaurant-card__heart--active {
+        background:-webkit-linear-gradient(bottom, var(--second-color), var(--main-color));
+        background-clip:text;
+        -webkit-background-clip:text;
+    }
+  }
+
+}

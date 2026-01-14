@@ -1,0 +1,38 @@
+/* Base styles */
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 45px;
+}
+
+p {
+  font-size: 40px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  font-size: 30px;
+  padding: 40px;
+  border: 0;
+  border-radius: 60px;
+  color: white;
+  background: linear-gradient(var(--second-color), var(--main-color));
+}
+
+button:hover {
+    filter: brightness(1.1);
+}

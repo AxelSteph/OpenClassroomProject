@@ -1,0 +1,31 @@
+/* Footer */
+.footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--footer-color);
+  padding: 20px 0;
+
+  &__logo {
+    margin: 40px;
+    width: 200px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 60px;
+    margin: 0 40px;
+    color: white;
+    font-size: 30px;
+  }
+
+  &__icon {
+    font-size: 30px;
+    width: 15px;
+  }
+
+  &__text {
+    display: inline;
+  }
+}
