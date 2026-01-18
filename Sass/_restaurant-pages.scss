@@ -16,7 +16,7 @@
   border-radius: 100px 100px 0 0;
   position: relative;
   opacity: 0;
-  animation: slideUp 500ms ease-out forwards;
+  animation: slideUp 500ms ease-out 1.5s forwards;
 }
 
 .restaurant-menu__header {
@@ -78,7 +78,7 @@
   border-radius: 20px;
   overflow: hidden;
   opacity: 0;
-  animation: slideUp 1s ease-out forwards;
+  animation: slideUp 1s ease-out 1.5s forwards;
 }
 
 .menu-card__content {
@@ -137,6 +137,7 @@
 
 .menu-card:hover .menu-card__check i {
   animation: roll 400ms ease-out forwards;
+  animation-delay: 1.5s;
 }
 
 .restaurant-menu__button {

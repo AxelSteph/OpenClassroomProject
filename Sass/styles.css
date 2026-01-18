@@ -46,6 +46,53 @@ button:hover {
   filter: brightness(1.1);
 }
 
+/* Loader */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 0.5s ease-in-out 1.5s forwards;
+}
+
+.loader__circle {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(147, 86, 220, 0.2);
+  border-top-color: var(--main-color);
+  border-right-color: var(--main-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+body {
+  animation: showContent 0s ease-in-out 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes showContent {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: auto;
+  }
+}
 /* Header */
 .header {
   display: flex;
@@ -213,7 +260,7 @@ button:hover {
   border-radius: 100px 100px 0 0;
   position: relative;
   opacity: 0;
-  animation: slideUp 500ms ease-out forwards;
+  animation: slideUp 500ms ease-out 1.5s forwards;
 }
 
 .restaurant-menu__header {
@@ -275,7 +322,7 @@ button:hover {
   border-radius: 20px;
   overflow: hidden;
   opacity: 0;
-  animation: slideUp 1s ease-out forwards;
+  animation: slideUp 1s ease-out 1.5s forwards;
 }
 
 .menu-card__content {
@@ -334,6 +381,7 @@ button:hover {
 
 .menu-card:hover .menu-card__check i {
   animation: roll 400ms ease-out forwards;
+  animation-delay: 1.5s;
 }
 
 .restaurant-menu__button {
@@ -394,6 +442,14 @@ button:hover {
   }
   to {
     transform: rotate(0deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 @media (min-width: 1440px) {
